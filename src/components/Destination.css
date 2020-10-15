@@ -1,0 +1,7 @@
+.destination {
+  cursor: pointer;
+}
+
+.destination > img {
+  width: 100%;
+}

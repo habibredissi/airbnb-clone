@@ -1,0 +1,29 @@
+.cards {
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+}
+
+.cards > img {
+  width: 100%;
+}
+
+.cards:hover {
+  transform: scale(1.07);
+}
+
+.cards__info {
+  padding: 10px;
+}
+
+.cards > h6,
+.cards > h4 {
+  padding-left: 4px;
+}
+
+.cards__title {
+  font-size: 16px;
+}
