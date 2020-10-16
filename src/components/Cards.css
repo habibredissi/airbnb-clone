@@ -8,7 +8,9 @@
 }
 
 .cards > img {
-  width: 100%;
+  max-width: 100%;
+  min-height: 183px;
+  width: auto;
 }
 
 .cards:hover {
@@ -26,4 +28,9 @@
 
 .cards__title {
   font-size: 16px;
+  min-height: 50px;
+}
+
+.cards__night {
+  font-weight: 400;
 }

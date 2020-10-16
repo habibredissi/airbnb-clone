@@ -11,6 +11,7 @@ function SearchResult({
   star,
   price,
   total,
+  reviews,
 }) {
   return (
     <div className="searchResult">
@@ -29,8 +30,9 @@ function SearchResult({
           <div className="searchResult__stars">
             <StarIcon className="searchResult__star" />
             <p>
-              <strong>{star}</strong>
+              <strong>{star} </strong>
             </p>
+            <p className="searchResult__reviews"> ({reviews})</p>
           </div>
           <div className="searchResults__price">
             <h2>{price}</h2>

@@ -5,3 +5,7 @@
 .destination > img {
   width: 100%;
 }
+
+.destination__name {
+  color: #484848;
+}

@@ -1,0 +1,44 @@
+.listing {
+  margin-top: 20px;
+}
+
+.listing__stars {
+  margin-top: 10px;
+  color: #ff385c;
+  display: flex;
+  align-items: center;
+}
+
+.listing__ratings {
+  color: #222222;
+}
+
+.listing__tile__city {
+  color: #717171;
+  padding-left: 10px;
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.listing__image > img {
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.listing__infos {
+  margin-top: 30px;
+}
+
+.listing__infos__sep {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.listing__host {
+  margin-top: 20px;
+}

@@ -1,13 +1,24 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 
 const Navbar = () => {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__top">
-        <div className="navbar__left">
-          <img src={require("../images/logo.png")} alt="logo" />
-        </div>
+        <Link to="/">
+          <div className="navbar__left">
+            <img src={require("../images/logo.png")} alt="logo" />
+          </div>
+        </Link>
         <div className="navbar__center">
           <h1>navbar__center</h1>
         </div>
@@ -29,7 +40,28 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar__bottom">
-        <h1>bottom</h1>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          TabIndicatorProps={{
+            style: {
+              height: "3px",
+              background: "#FF385C",
+            },
+          }}
+          centered
+        >
+          <Tab label="Home" to="/" component={Link} />
+          <Tab label="Explore" to="/search" component={Link} />
+          <Tab
+            label="Paris"
+            to={{
+              pathname: `/search/Paris`,
+            }}
+            component={Link}
+          />
+          <Tab label="Experiences" />
+        </Tabs>
       </div>
     </div>
   );

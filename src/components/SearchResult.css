@@ -69,3 +69,7 @@
   bottom: 20px;
   right: 30px;
 }
+
+.searchResult__reviews {
+  padding-left: 5px;
+}

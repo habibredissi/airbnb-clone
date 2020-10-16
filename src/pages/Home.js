@@ -1,10 +1,5 @@
 import React from "react";
-import Banner from "../components/Banner";
-import Card from "../components/Card";
-import Cards from "../components/Cards";
 import "./Home.css";
-import Grid from "@material-ui/core/Grid";
-import Title from "../components/Title";
 import JustBooked from "../components/JustBooked";
 import FeaturedDestinations from "../components/FeaturedDestinations";
 import Experiences from "../components/Experiences";
