@@ -39,7 +39,7 @@ const JustBooked = () => {
               const { image1, title, price, reviews, note } = listing.fields;
               console.log(listing.fields);
               return (
-                <Grid item xs key={index}>
+                <Grid item xs={12} md key={index}>
                   <Link
                     to={{
                       pathname: `/listing/${listing.sys.id}`,

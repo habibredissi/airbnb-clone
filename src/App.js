@@ -8,6 +8,7 @@ import SearchPage from "./pages/SearchPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
+  console.log("process.env", process.env);
   return (
     <div className="app">
       <Router>

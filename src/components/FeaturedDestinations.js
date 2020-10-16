@@ -34,7 +34,7 @@ const FeaturedDestinations = () => {
             places.map((place, index) => {
               const { city, image } = place.fields;
               return (
-                <Grid item xs={12} sm={4} md key={index}>
+                <Grid item xs={6} sm={4} md key={index}>
                   <Link
                     to={{
                       pathname: `/search/${city}`,
