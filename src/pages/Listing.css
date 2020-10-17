@@ -25,6 +25,7 @@
 .listing__image > img {
   margin-top: 20px;
   border-radius: 10px;
+  max-width: 100%;
 }
 
 .listing__infos {
