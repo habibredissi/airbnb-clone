@@ -10,7 +10,7 @@
 .cards > img {
   max-width: 100%;
   min-height: 183px;
-  width: auto;
+  width: 100%;
 }
 
 .cards:hover {

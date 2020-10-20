@@ -26,6 +26,7 @@
   margin-top: 20px;
   border-radius: 10px;
   max-width: 100%;
+  width: 100%;
 }
 
 .listing__infos {
@@ -42,4 +43,8 @@
 
 .listing__host {
   margin-top: 20px;
+}
+
+.listing__goback__btn {
+  margin-bottom: 10px !important;
 }

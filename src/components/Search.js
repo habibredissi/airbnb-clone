@@ -16,9 +16,7 @@ function Search() {
     endDate: endDate,
     key: "selection",
   };
-  const handleSelection = () => {
-    console.log("test");
-  };
+  const handleSelection = () => {};
   return (
     <div className="search">
       <DateRangePicker ranges={[selectionRange]} onChange={handleSelection} />

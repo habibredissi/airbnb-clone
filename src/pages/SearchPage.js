@@ -69,7 +69,7 @@ function SearchPage() {
               key={index}
             >
               <SearchResult
-                img={image1}
+                randomPic={image1}
                 location={`${propertyType} in center of ${city}`}
                 title={title}
                 description={`${guests} guest · ${bedrooms} bedroom · Wifi · Kitchen · Free parking · Washing Machine`}

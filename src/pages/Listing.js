@@ -5,8 +5,12 @@ import { useParams } from "react-router";
 import { client } from "../client";
 import parse from "html-react-parser";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import Button from "@material-ui/core/Button";
 
-const Listing = () => {
+const Listing = (props) => {
+  const history = useHistory();
   const { id } = useParams();
 
   const [listing, setListing] = useState({});
@@ -25,11 +29,21 @@ const Listing = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  if (!loading) console.log(listing.fields["title"]);
   return (
     <div className="listing">
       {!loading && (
         <div className="wrapper">
+          <div className="listing__goback">
+            <Button
+              variant="outlined"
+              color="default"
+              startIcon={<ArrowBackIosIcon />}
+              onClick={() => history.goBack()}
+              className="listing__goback__btn"
+            >
+              Back
+            </Button>
+          </div>
           <div className="listing__tile">
             <h1>{listing.fields.title}</h1>
             <div className="listing__stars">
@@ -48,7 +62,10 @@ const Listing = () => {
             </div>
           </div>
           <div className="listing__image">
-            <img src={listing.fields.image1} alt="Loft" />
+            <img
+              src={require(`../images/listings/${listing.fields.image1}.jpg`)}
+              alt="Loft"
+            />
           </div>
           <div className="listing__infos">
             <h2>

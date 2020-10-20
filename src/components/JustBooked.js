@@ -26,7 +26,6 @@ const JustBooked = () => {
     fetchData();
   }, []);
 
-  if (!loading) console.log(listings);
   return (
     <div className="justbooked">
       <div className="wrapper">
@@ -37,7 +36,6 @@ const JustBooked = () => {
           {!loading &&
             listings.map((listing, index) => {
               const { image1, title, price, reviews, note } = listing.fields;
-              console.log(listing.fields);
               return (
                 <Grid item xs={12} md key={index}>
                   <Link
@@ -46,12 +44,12 @@ const JustBooked = () => {
                     }}
                   >
                     <Cards
-                      src={image1.split("?")[0]}
                       title={title}
                       price={price}
                       reviewsNumber={reviews}
                       note={note}
                       listing={true}
+                      randomPic={image1}
                     />
                   </Link>
                 </Grid>

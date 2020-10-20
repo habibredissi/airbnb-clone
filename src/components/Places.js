@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import "./Experiences.css";
-import Cards from "./Cards";
+import "./Places.css";
 import Grid from "@material-ui/core/Grid";
 import Title from "./Title";
+import Place from "./Place";
 import { client } from "../client";
 
-const Experiences = () => {
-  const [experiences, setExperiences] = useState([]);
+function Places() {
+  const [guides, setGuides] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
       const response = await client.getEntries({
-        content_type: "experiences",
+        content_type: "guides",
       });
-      setExperiences(response.items);
+      setGuides(response.items);
       setLoading(false);
     } catch (e) {
       console.error(e);
@@ -26,24 +26,18 @@ const Experiences = () => {
   }, []);
 
   return (
-    <div className="experiences">
+    <div className="places">
       <div className="wrapper">
         <Grid container spacing={1}>
           <Grid item xs={12} className="home__title">
-            <Title allLinks={true} title="Experiences" />
+            <Title allLinks={true} title="Places in London" />
           </Grid>
+
           {!loading &&
-            experiences.map((experience) => {
-              const { title, price, reviews, note, image } = experience.fields;
+            guides.map((guide, index) => {
               return (
-                <Grid item xs>
-                  <Cards
-                    src={image.fields.file.url}
-                    title={title}
-                    price={price}
-                    reviewsNumber={reviews}
-                    note={note}
-                  />
+                <Grid item xs={12} md key={index}>
+                  <Place guide={guide} />
                 </Grid>
               );
             })}
@@ -51,6 +45,6 @@ const Experiences = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Experiences;
+export default Places;

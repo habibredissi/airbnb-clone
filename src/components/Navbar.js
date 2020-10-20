@@ -108,7 +108,6 @@ const Navbar = () => {
             }}
             component={Link}
           />
-          <Tab label="Experiences" />
         </Tabs>
       </div>
     </div>

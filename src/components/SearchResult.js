@@ -12,10 +12,12 @@ function SearchResult({
   price,
   total,
   reviews,
+  fromNotifications,
+  randomPic,
 }) {
   return (
     <div className="searchResult">
-      <img src={img} alt="" />
+      <img src={require(`../images/listings/${randomPic}.jpg`)} alt="" />
       <FavoriteBorderIcon className="searchResult__heart" />
 
       <div className="searchResult__info">

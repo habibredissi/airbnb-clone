@@ -2,10 +2,13 @@ import React from "react";
 import "./Cards.css";
 import Rating from "@material-ui/lab/Rating";
 
-function Cards({ title, src, price, note, reviewsNumber, listing }) {
+function Cards({ title, randomPic, src, price, note, reviewsNumber, listing }) {
   return (
     <div className="cards">
-      <img src={src} alt={title} />
+      <img
+        src={src ? src : require(`../images/listings/${randomPic}.jpg`)}
+        alt={title}
+      />
       <div className="cards__info">
         <p className="cards__title">{title}</p>
         <h4>
