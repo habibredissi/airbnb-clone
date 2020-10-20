@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 
 import Select from "@material-ui/core/Select";
@@ -41,22 +40,22 @@ function Footer() {
             <h2 className="footer__title">Airbnb</h2>
             <ul>
               <li>
-                <a href="#">About us</a>
+                <a href="/">About us</a>
               </li>
               <li>
-                <a href="#">Careers</a>
+                <a href="/">Careers</a>
               </li>
               <li>
-                <a href="#">Press</a>
+                <a href="/">Press</a>
               </li>
               <li>
-                <a href="#">Policies</a>
+                <a href="/">Policies</a>
               </li>
               <li>
-                <a href="#">Help</a>
+                <a href="/">Help</a>
               </li>
               <li>
-                <a href="#">Divertisity & Belonging</a>
+                <a href="/">Divertisity & Belonging</a>
               </li>
             </ul>
           </div>
@@ -64,25 +63,25 @@ function Footer() {
             <h2 className="footer__title">Discover</h2>
             <ul>
               <li>
-                <a href="#">Trust & Safety</a>
+                <a href="/">Trust & Safety</a>
               </li>
               <li>
-                <a href="#">Travel Credit</a>
+                <a href="/">Travel Credit</a>
               </li>
               <li>
-                <a href="#">Gift Cards</a>
+                <a href="/">Gift Cards</a>
               </li>
               <li>
-                <a href="#">Airbnb Citizen</a>
+                <a href="/">Airbnb Citizen</a>
               </li>
               <li>
-                <a href="#">Business Travel</a>
+                <a href="/">Business Travel</a>
               </li>
               <li>
-                <a href="#">Guidebooks</a>
+                <a href="/">Guidebooks</a>
               </li>
               <li>
-                <a href="#">Airbnblag</a>
+                <a href="/">Airbnblag</a>
               </li>
             </ul>
           </div>
@@ -90,16 +89,16 @@ function Footer() {
             <h2 className="footer__title">Hosting</h2>
             <ul>
               <li>
-                <a href="#">Why Host</a>
+                <a href="/">Why Host</a>
               </li>
               <li>
-                <a href="#">Hospitality</a>
+                <a href="/">Hospitality</a>
               </li>
               <li>
-                <a href="#">Responsible Hosting</a>
+                <a href="/">Responsible Hosting</a>
               </li>
               <li>
-                <a href="#">Community Center</a>
+                <a href="/">Community Center</a>
               </li>
             </ul>
           </div>
@@ -128,7 +127,7 @@ function Footer() {
                   strokeWidth="3"
                 />
               </svg>{" "}
-              <a href="#">Airbnb, Inc.</a>
+              <a href="/">Airbnb, Inc.</a>
             </li>
 
             <li>

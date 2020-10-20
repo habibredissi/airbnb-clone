@@ -21,7 +21,7 @@
   padding: 20px 0 0 20px;
 }
 
-.searchPage__city > button {
+.searchPage__city button {
   text-transform: inherit;
   margin: 5px;
   text-decoration: none;

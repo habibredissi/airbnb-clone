@@ -33,10 +33,10 @@ const Experiences = () => {
             <Title allLinks={true} title="Experiences" />
           </Grid>
           {!loading &&
-            experiences.map((experience) => {
+            experiences.map((experience, index) => {
               const { title, price, reviews, note, image } = experience.fields;
               return (
-                <Grid item xs>
+                <Grid item xs key={index}>
                   <Cards
                     src={image.fields.file.url}
                     title={title}

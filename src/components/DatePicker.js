@@ -3,10 +3,9 @@ import "./DatePicker.css";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import PeopleIcon from "@material-ui/icons/People";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import TextField from "@material-ui/core/TextField";
+
 function DatePicker() {
   const history = useHistory();
   const [startDate, setStartDate] = useState(new Date());

@@ -16,19 +16,18 @@ const Listing = (props) => {
   const [listing, setListing] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
-    try {
-      const response = await client.getEntry(id);
-      setListing(response);
-      setLoading(false);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await client.getEntry(id);
+        setListing(response);
+        setLoading(false);
+      } catch (e) {
+        console.error(e);
+      }
+    };
     fetchData();
-  }, []);
+  }, [id]);
   return (
     <div className="listing">
       {!loading && (

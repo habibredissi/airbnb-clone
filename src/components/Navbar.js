@@ -73,16 +73,16 @@ const Navbar = () => {
         <div className="navbar__right">
           <ul clas="navbar__right__menu">
             <li>
-              <a href="#">Become a Host</a>
+              <a href="/">Become a Host</a>
             </li>
             <li>
-              <a href="#">Help</a>
+              <a href="/">Help</a>
             </li>
             <li>
-              <a href="#">Sign Up</a>
+              <a href="/">Sign Up</a>
             </li>
             <li>
-              <a href="#">Log in</a>
+              <a href="/">Log in</a>
             </li>
           </ul>
         </div>

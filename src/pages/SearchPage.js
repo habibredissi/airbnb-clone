@@ -13,23 +13,22 @@ function SearchPage() {
   const [loading, setLoading] = useState(true);
   const [places, setPlaces] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      const response = await client.getEntries({
-        content_type: "listings",
-        "fields.city": city,
-        limit: 20,
-      });
-      setListings(response.items);
-      const response2 = await client.getEntries({ content_type: "places" });
-      setPlaces(response2.items);
-      setLoading(false);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await client.getEntries({
+          content_type: "listings",
+          "fields.city": city,
+          limit: 20,
+        });
+        setListings(response.items);
+        const response2 = await client.getEntries({ content_type: "places" });
+        setPlaces(response2.items);
+        setLoading(false);
+      } catch (e) {
+        console.error(e);
+      }
+    };
     fetchData();
   }, [city]);
 
@@ -39,18 +38,16 @@ function SearchPage() {
         <h1>Other cities</h1>
         {!loading &&
           places.map((place, index) => {
-            if (place.fields.city != city) {
-              return (
-                <Link
-                  to={{
-                    pathname: `/search/${place.fields.city}`,
-                  }}
-                  key={index}
-                >
-                  <Button variant="outlined">{place.fields.city}</Button>
-                </Link>
-              );
-            }
+            return (
+              <Link
+                to={{
+                  pathname: `/search/${place.fields.city}`,
+                }}
+                key={index}
+              >
+                <Button variant="outlined">{place.fields.city}</Button>
+              </Link>
+            );
           })}
       </div>
       <div className="searchPage__info">
@@ -67,14 +64,8 @@ function SearchPage() {
           const {
             bedrooms,
             city,
-            description,
             guests,
-            hostBio,
-            hostName,
-            hostPic,
             image1,
-            maxmiumNights,
-            minimumNights,
             note,
             price,
             propertyType,
