@@ -11,15 +11,18 @@ function SearchPage() {
 
   const [listings, setListings] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [places, setPlaces] = useState([]);
 
   const fetchData = async () => {
     try {
       const response = await client.getEntries({
         content_type: "listings",
         "fields.city": city,
-        limit: 30,
+        limit: 20,
       });
       setListings(response.items);
+      const response2 = await client.getEntries({ content_type: "places" });
+      setPlaces(response2.items);
       setLoading(false);
     } catch (e) {
       console.error(e);
@@ -32,8 +35,25 @@ function SearchPage() {
 
   return (
     <div className="searchPage">
+      <div className="searchPage__city">
+        <h1>Other cities</h1>
+        {!loading &&
+          places.map((place, index) => {
+            if (place.fields.city != city) {
+              return (
+                <Link
+                  to={{
+                    pathname: `/search/${place.fields.city}`,
+                  }}
+                  key={index}
+                >
+                  <Button variant="outlined">{place.fields.city}</Button>
+                </Link>
+              );
+            }
+          })}
+      </div>
       <div className="searchPage__info">
-        <p>62 stays · 26 august to 30 august · 2 guest</p>
         <h1>Stays nearby {city} </h1>
         <Button variant="outlined">Cancellation Flexibility</Button>
         <Button variant="outlined">Type of place</Button>
@@ -41,6 +61,7 @@ function SearchPage() {
         <Button variant="outlined">Rooms and beds</Button>
         <Button variant="outlined">More filters</Button>
       </div>
+
       {!loading &&
         listings.map((listing, index) => {
           const {

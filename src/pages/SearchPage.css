@@ -8,11 +8,26 @@
 }
 
 .searchPage__info > h1 {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .searchPage__info > button {
   border-radius: 30px;
   text-transform: inherit;
   margin: 5px;
+}
+
+.searchPage__city {
+  padding: 20px 0 0 20px;
+}
+
+.searchPage__city > button {
+  text-transform: inherit;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.searchPage__city a {
+  text-decoration: none;
+  padding-right: 10px;
 }

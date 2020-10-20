@@ -125,7 +125,7 @@ function Footer() {
                   transform="translate(1.498 1.5)"
                   fill="none"
                   stroke="#707070"
-                  stroke-width="3"
+                  strokeWidth="3"
                 />
               </svg>{" "}
               <a href="#">Airbnb, Inc.</a>
