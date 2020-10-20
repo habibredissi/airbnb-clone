@@ -73,3 +73,12 @@
 .searchResult__reviews {
   padding-left: 5px;
 }
+
+@media screen and (max-width: 700px) {
+  .searchResults__price h2 {
+    font-size: 16px !important;
+  }
+  .searchResults__price p {
+    display: none;
+  }
+}

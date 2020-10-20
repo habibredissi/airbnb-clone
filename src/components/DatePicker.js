@@ -8,6 +8,7 @@ import { useHistory } from "react-router-dom";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { addDays } from "date-fns";
+
 function DatePicker() {
   const history = useHistory();
   const [state, setState] = useState([
