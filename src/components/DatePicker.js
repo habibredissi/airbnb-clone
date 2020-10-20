@@ -5,8 +5,8 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import { addDays } from "date-fns";
 function DatePicker() {
   const history = useHistory();
@@ -17,7 +17,6 @@ function DatePicker() {
       key: "selection",
     },
   ]);
-  const handleSelection = () => {};
   return (
     <div className="search">
       <DateRangePicker
