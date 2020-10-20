@@ -5,23 +5,27 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { addDays } from "date-fns";
 function DatePicker() {
   const history = useHistory();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    key: "selection",
-  };
+  const [state, setState] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 1),
+      key: "selection",
+    },
+  ]);
   const handleSelection = () => {};
   return (
     <div className="search">
       <DateRangePicker
-        ranges={[selectionRange]}
-        onChange={handleSelection}
-        className="search__datePicker"
+        onChange={(item) => setState([item.selection])}
+        showSelectionPreview={true}
+        moveRangeOnFirstSelection={false}
+        ranges={state}
+        direction="horizontal"
       />
       <Button onClick={() => history.push("/search")}>Search Airbnb</Button>
     </div>

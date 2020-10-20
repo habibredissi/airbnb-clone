@@ -36,7 +36,7 @@ const Experiences = () => {
             experiences.map((experience, index) => {
               const { title, price, reviews, note, image } = experience.fields;
               return (
-                <Grid item xs key={index}>
+                <Grid item xs={12} md key={index}>
                   <Cards
                     src={image.fields.file.url}
                     title={title}
