@@ -1,23 +1,23 @@
 import React from "react";
-import "./Cards.css";
+import { StyledCards, StyledCardsInfo } from "./styled/StyledCards";
 import Rating from "@material-ui/lab/Rating";
 
 function Cards({ title, randomPic, src, price, note, reviewsNumber, listing }) {
   return (
-    <div className="cards">
+    <StyledCards>
       <img
         src={src ? src : require(`../images/listings/${randomPic}.jpg`)}
         alt={title}
       />
-      <div className="cards__info">
-        <p className="cards__title">{title}</p>
+      <StyledCardsInfo>
+        <p>{title}</p>
         <h4>
           ${price} {listing && <span className="cards__night">/ night</span>}
         </h4>
         <Rating name="size-small" defaultValue={note} size="small" />
         <h6>{reviewsNumber} reviews</h6>
-      </div>
-    </div>
+      </StyledCardsInfo>
+    </StyledCards>
   );
 }
 

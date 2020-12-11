@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./Places.css";
 import Grid from "@material-ui/core/Grid";
 import Title from "./Title";
 import Place from "./Place";
 import { client } from "../client";
+import Wrapper from "../elements/Wrapper";
 
 function Places() {
   const [guides, setGuides] = useState([]);
@@ -27,9 +27,9 @@ function Places() {
 
   return (
     <div className="places">
-      <div className="wrapper">
+      <Wrapper>
         <Grid container spacing={1}>
-          <Grid item xs={12} className="home__title">
+          <Grid item xs={12}>
             <Title allLinks={true} title="Places in London" />
           </Grid>
 
@@ -42,7 +42,7 @@ function Places() {
               );
             })}
         </Grid>
-      </div>
+      </Wrapper>
     </div>
   );
 }

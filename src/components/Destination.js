@@ -1,12 +1,12 @@
 import React from "react";
-import "./Destination.css";
+import { StyledDestination } from "./styled/StyledDestination";
 
 function Destination({ title, src }) {
   return (
-    <div className="destination">
-      <img className="destination__image" src={src} alt={title} />
-      <h3 className="destination__name">{title}</h3>
-    </div>
+    <StyledDestination>
+      <img src={src} alt={title} />
+      <h3>{title}</h3>
+    </StyledDestination>
   );
 }
 

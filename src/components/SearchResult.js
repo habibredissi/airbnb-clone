@@ -1,7 +1,12 @@
 import React from "react";
-import "./SearchResult.css";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import StarIcon from "@material-ui/icons/Star";
+import {
+  StyledSearchResult,
+  StyledInfoTop,
+  StyledInfoBottom,
+  StyledSearchPrice,
+  StyledFavoriteBorderIcon,
+} from "./styled/StyledSearchResult";
 
 function SearchResult({
   img,
@@ -16,33 +21,33 @@ function SearchResult({
   randomPic,
 }) {
   return (
-    <div className="searchResult">
+    <StyledSearchResult>
       <img src={require(`../images/listings/${randomPic}.jpg`)} alt="" />
-      <FavoriteBorderIcon className="searchResult__heart" />
+      <StyledFavoriteBorderIcon />
 
-      <div className="searchResult__info">
-        <div className="searchResult__infoTop">
+      <div>
+        <StyledInfoTop>
           <p>{location}</p>
           <h3>{title}</h3>
           <p>____</p>
           <p>{description}</p>
-        </div>
+        </StyledInfoTop>
 
-        <div className="searchResult__infoBottom">
-          <div className="searchResult__stars">
-            <StarIcon className="searchResult__star" />
+        <StyledInfoBottom>
+          <div>
+            <StarIcon />
             <p>
               <strong>{star} </strong>
             </p>
-            <p className="searchResult__reviews"> ({reviews})</p>
+            <p> ({reviews})</p>
           </div>
-          <div className="searchResults__price">
+          <StyledSearchPrice>
             <h2>{price}</h2>
             <p>{total}</p>
-          </div>
-        </div>
+          </StyledSearchPrice>
+        </StyledInfoBottom>
       </div>
-    </div>
+    </StyledSearchResult>
   );
 }
 

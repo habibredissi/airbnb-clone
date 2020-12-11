@@ -1,16 +1,18 @@
 import React from "react";
-import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Listing from "./pages/Listing";
 import SearchPage from "./pages/SearchPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import styled, { ThemeProvider } from "styled-components";
+
+const theme = {};
 
 function App() {
   return (
-    <div className="app">
-      <Router>
+    <Router>
+      <ThemeProvider theme={theme}>
         <Navbar />
         <Switch>
           <Route path="/search/:city">
@@ -27,8 +29,8 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-      </Router>
-    </div>
+      </ThemeProvider>
+    </Router>
   );
 }
 

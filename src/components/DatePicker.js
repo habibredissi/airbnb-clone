@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./DatePicker.css";
+import { StyledDatePicker, StyledButton } from "./styled/StyledDatePicker";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
-import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -19,7 +18,7 @@ function DatePicker() {
     },
   ]);
   return (
-    <div className="search">
+    <StyledDatePicker>
       <DateRangePicker
         onChange={(item) => setState([item.selection])}
         showSelectionPreview={true}
@@ -27,8 +26,10 @@ function DatePicker() {
         ranges={state}
         direction="horizontal"
       />
-      <Button onClick={() => history.push("/search")}>Search Airbnb</Button>
-    </div>
+      <StyledButton onClick={() => history.push("/search")}>
+        Search Airbnb
+      </StyledButton>
+    </StyledDatePicker>
   );
 }
 

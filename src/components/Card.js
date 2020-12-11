@@ -1,16 +1,16 @@
 import React from "react";
-import "./Card.css";
+import { StyledCard, StyledCardInfo } from "./styled/StyledCard";
 
 function Card({ src, title, description, price }) {
   return (
-    <div className="card">
+    <StyledCard>
       <img src={src} alt="card" />
-      <div className="card__info">
-        <h2>{title}</h2>
+      <StyledCardInfo>
+        <h2>{title}sss</h2>
         <h4>{description}</h4>
         <h3>{price}</h3>
-      </div>
-    </div>
+      </StyledCardInfo>
+    </StyledCard>
   );
 }
 

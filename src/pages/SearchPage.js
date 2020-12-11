@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "./SearchPage.css";
 import { Button } from "@material-ui/core";
 import SearchResult from "../components/SearchResult";
 import { useParams } from "react-router";
 import { client } from "../client";
 import { Link } from "react-router-dom";
+import {
+  StyledDiv,
+  StyledButton,
+  StyledLink,
+  StyledInfo,
+} from "../elements/Search";
 
 function SearchPage() {
   const { city } = useParams("");
@@ -33,31 +38,33 @@ function SearchPage() {
   }, [city]);
 
   return (
-    <div className="searchPage">
-      <div className="searchPage__city">
+    <React.Fragment>
+      <StyledDiv>
         <h1>Other cities</h1>
         {!loading &&
           places.map((place, index) => {
             return (
-              <Link
+              <StyledLink
                 to={{
                   pathname: `/search/${place.fields.city}`,
                 }}
                 key={index}
               >
-                <Button variant="outlined">{place.fields.city}</Button>
-              </Link>
+                <StyledButton variant="outlined">
+                  {place.fields.city}
+                </StyledButton>
+              </StyledLink>
             );
           })}
-      </div>
-      <div className="searchPage__info">
+      </StyledDiv>
+      <StyledInfo>
         <h1>Stays nearby {city} </h1>
         <Button variant="outlined">Cancellation Flexibility</Button>
         <Button variant="outlined">Type of place</Button>
         <Button variant="outlined">Price</Button>
         <Button variant="outlined">Rooms and beds</Button>
         <Button variant="outlined">More filters</Button>
-      </div>
+      </StyledInfo>
 
       {!loading &&
         listings.map((listing, index) => {
@@ -94,7 +101,7 @@ function SearchPage() {
             </Link>
           );
         })}
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./FeaturedDestinations.css";
 import Destination from "./Destination";
 import Grid from "@material-ui/core/Grid";
 import Title from "./Title";
 import { client } from "../client";
 import { Link } from "react-router-dom";
+import Wrapper from "../elements/Wrapper";
 
 const FeaturedDestinations = () => {
   const [places, setPlaces] = useState([]);
@@ -25,9 +25,9 @@ const FeaturedDestinations = () => {
 
   return (
     <div className="featureddestination">
-      <div className="wrapper">
+      <Wrapper>
         <Grid container spacing={1}>
-          <Grid item xs={12} className="home__title">
+          <Grid item xs={12}>
             <Title allLinks={true} title="Featured destinations" />
           </Grid>
           {!loading &&
@@ -39,6 +39,7 @@ const FeaturedDestinations = () => {
                     to={{
                       pathname: `/search/${city}`,
                     }}
+                    style={{ textDecoration: "none" }}
                   >
                     <Destination src={image.fields.file.url} title={city} />
                   </Link>
@@ -46,7 +47,7 @@ const FeaturedDestinations = () => {
               );
             })}
         </Grid>
-      </div>
+      </Wrapper>
     </div>
   );
 };

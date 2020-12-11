@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./JustBooked.css";
 import Cards from "./Cards";
 import Grid from "@material-ui/core/Grid";
 import Title from "./Title";
 import { client } from "../client";
 import { Link } from "react-router-dom";
+import Wrapper from "../elements/Wrapper";
 
 const JustBooked = () => {
   const [listings, setListings] = useState([]);
@@ -27,10 +27,10 @@ const JustBooked = () => {
   }, []);
 
   return (
-    <div className="justbooked">
-      <div className="wrapper">
+    <div>
+      <Wrapper>
         <Grid container spacing={1}>
-          <Grid item xs={12} className="home__title">
+          <Grid item xs={12}>
             <Title allLinks={false} title="Just Booked" />
           </Grid>
           {!loading &&
@@ -42,6 +42,7 @@ const JustBooked = () => {
                     to={{
                       pathname: `/listing/${listing.sys.id}`,
                     }}
+                    style={{ textDecoration: "none", color: "#484848" }}
                   >
                     <Cards
                       title={title}
@@ -56,7 +57,7 @@ const JustBooked = () => {
               );
             })}
         </Grid>
-      </div>
+      </Wrapper>
     </div>
   );
 };

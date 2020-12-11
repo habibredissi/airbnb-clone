@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Listing.css";
 import StarIcon from "@material-ui/icons/Star";
 import { useParams } from "react-router";
 import { client } from "../client";
@@ -8,6 +7,8 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import Button from "@material-ui/core/Button";
+import Wrapper from "../elements/Wrapper";
+import { ListingStars, P, IMG, StyledDiv, StyledHr } from "../elements/Listing";
 
 const Listing = (props) => {
   const history = useHistory();
@@ -29,44 +30,44 @@ const Listing = (props) => {
     fetchData();
   }, [id]);
   return (
-    <div className="listing">
+    <React.Fragment>
       {!loading && (
-        <div className="wrapper">
-          <div className="listing__goback">
-            <Button
-              variant="outlined"
-              color="default"
-              startIcon={<ArrowBackIosIcon />}
-              onClick={() => history.goBack()}
-              className="listing__goback__btn"
-            >
-              Back
-            </Button>
-          </div>
-          <div className="listing__tile">
+        <Wrapper listing>
+          <Button
+            variant="outlined"
+            color="default"
+            startIcon={<ArrowBackIosIcon />}
+            onClick={() => history.goBack()}
+            style={{ marginBottom: "10px" }}
+          >
+            Back
+          </Button>
+
+          <div>
             <h1>{listing.fields.title}</h1>
-            <div className="listing__stars">
+            <ListingStars>
               <StarIcon className="listing__star--color" />
-              <p className="listing__ratings">
+              <P>
                 <strong>{listing.fields.note / 2}</strong>
                 <span> ({listing.fields.reviews}) - </span>
-              </p>
+              </P>
               <Link
                 to={{
                   pathname: `/search/${listing.fields.city}`,
                 }}
               >
-                <p className="listing__tile__city">{listing.fields.city}</p>
+                <P title>{listing.fields.city}</P>
               </Link>
-            </div>
+            </ListingStars>
           </div>
-          <div className="listing__image">
-            <img
-              src={require(`../images/listings/${listing.fields.image1}.jpg`)}
-              alt="Loft"
-            />
-          </div>
-          <div className="listing__infos">
+
+          <IMG
+            src={require(`../images/listings/${listing.fields.image1}.jpg`)}
+            alt="Loft"
+            StyledHr
+          />
+
+          <StyledDiv top="30px">
             <h2>
               {listing.fields.propertyType}. Host : {listing.fields.hostName}
             </h2>
@@ -75,19 +76,17 @@ const Listing = (props) => {
               {listing.fields.bedrooms} rooms · {listing.fields.minimumNights}{" "}
               minimum nights
             </p>
-            <hr className="listing__infos__sep" />
-          </div>
-          <div className="listing__description">
-            <p>{parse(listing.fields.description)}</p>
-          </div>
-          <div className="listing__host">
+            <StyledHr />
+          </StyledDiv>
+          <p>{parse(listing.fields.description)}</p>
+          <StyledDiv top="20px">
             <h1>Bio Guillaume</h1>
-            <hr className="listing__infos__sep" />
+            <StyledHr />
             <p>{parse(listing.fields.hostBio)}</p>
-          </div>
-        </div>
+          </StyledDiv>
+        </Wrapper>
       )}
-    </div>
+    </React.Fragment>
   );
 };
 

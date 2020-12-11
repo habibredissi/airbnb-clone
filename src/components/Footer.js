@@ -1,19 +1,15 @@
 import React from "react";
-import "./Footer.css";
 import MenuItem from "@material-ui/core/MenuItem";
-
+import Wrapper from "../elements/Wrapper";
 import Select from "@material-ui/core/Select";
+import { StyledFooter, StyledMain, StyledLegal } from "./styled/StyledFooter";
+
 function Footer() {
   return (
-    // <div className="footer">
-    //   <p>© 2020 Airbnb clone. No rights reserved.</p>
-    //   <p>Privacy · Terms · Sitemap · Company Details</p>
-    // </div>
-
-    <div className="footer">
-      <footer className="wrapper">
-        <section className="footer__main">
-          <div className="footer__main__item">
+    <Wrapper footer>
+      <StyledFooter>
+        <StyledMain>
+          <div>
             <Select
               labelId="select__language"
               id="select__language"
@@ -36,8 +32,8 @@ function Footer() {
               <MenuItem value={20}>Dollars</MenuItem>
             </Select>
           </div>
-          <div className="footer__main__item">
-            <h2 className="footer__title">Airbnb</h2>
+          <div>
+            <h2>Airbnb</h2>
             <ul>
               <li>
                 <a href="/">About us</a>
@@ -59,8 +55,8 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer__main__item">
-            <h2 className="footer__title">Discover</h2>
+          <div>
+            <h2>Discover</h2>
             <ul>
               <li>
                 <a href="/">Trust & Safety</a>
@@ -85,8 +81,8 @@ function Footer() {
               </li>
             </ul>
           </div>
-          <div className="footer__main__item">
-            <h2 className="footer__title">Hosting</h2>
+          <div>
+            <h2>Hosting</h2>
             <ul>
               <li>
                 <a href="/">Why Host</a>
@@ -102,15 +98,15 @@ function Footer() {
               </li>
             </ul>
           </div>
-        </section>
+        </StyledMain>
 
-        <section className="footer__seperator">
+        <section>
           <hr />
         </section>
 
-        <section className="footer__legal">
-          <ul className="footer__legal__list">
-            <li className="footer__legal__list__1">
+        <StyledLegal>
+          <ul>
+            <li>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22.998"
@@ -134,9 +130,9 @@ function Footer() {
               <p>Privacy · Terms · Sitemap · Company</p>
             </li>
           </ul>
-        </section>
-      </footer>
-    </div>
+        </StyledLegal>
+      </StyledFooter>
+    </Wrapper>
   );
 }
 
