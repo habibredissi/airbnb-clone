@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -9,6 +8,11 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField";
 import PlaceIcon from "@material-ui/icons/Place";
 import DateRangeIcon from "@material-ui/icons/DateRange";
+import {
+  StyledNavbar,
+  StyledNavbarCenter,
+  StyledNavbarRight,
+} from "./styled/StyledNavbar";
 
 const Navbar = () => {
   const [value, setValue] = React.useState(0);
@@ -20,14 +24,14 @@ const Navbar = () => {
   const [showSearch, setShowSearch] = useState(false);
 
   return (
-    <div className="navbar">
-      <div className="navbar__top">
+    <StyledNavbar>
+      <div>
         <Link to="/">
-          <div className="navbar__left">
+          <div>
             <img src={require("../images/logo.png")} alt="logo" />
           </div>
         </Link>
-        <div className="navbar__center">
+        <StyledNavbarCenter>
           <TextField
             placeholder="When"
             id="input-when"
@@ -69,9 +73,9 @@ const Navbar = () => {
               ),
             }}
           />
-        </div>
-        <div className="navbar__right">
-          <ul clas="navbar__right__menu">
+        </StyledNavbarCenter>
+        <StyledNavbarRight>
+          <ul>
             <li>
               <a href="/">Become a Host</a>
             </li>
@@ -85,9 +89,9 @@ const Navbar = () => {
               <a href="/">Log in</a>
             </li>
           </ul>
-        </div>
+        </StyledNavbarRight>
       </div>
-      <div className="navbar__bottom">
+      <div>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -98,6 +102,7 @@ const Navbar = () => {
             },
           }}
           centered
+          style={{ margin: "0 auto" }}
         >
           <Tab label="Home" to="/" component={Link} />
           <Tab label="Explore" to="/search" component={Link} />
@@ -110,7 +115,7 @@ const Navbar = () => {
           />
         </Tabs>
       </div>
-    </div>
+    </StyledNavbar>
   );
 };
 
